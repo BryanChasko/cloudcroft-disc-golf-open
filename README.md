@@ -264,7 +264,7 @@ the 3d forest is illustrative — random tree instances, not a surveyed canopy. 
 
 ## show and tell
 
-this section demonstrates the technical stack with real examples. full AWS MCP captures are in [`docs/aws-mcp-captures.md`](aws-mcp-captures.md).
+this section demonstrates the technical stack with real examples. full AWS MCP captures are in [`aws-mcp-captures.md`](aws-mcp-captures.md).
 
 ### graviton lambdas
 
