@@ -7,7 +7,7 @@ BUCKET="bryanchasko.com"
 PREFIX="cloudcroft-disc-golf"
 PROFILE="${AWS_PROFILE:-aerospaceug-admin}"
 REGION="${AWS_REGION:-us-west-2}"
-DISTRO="E2E9BSL5RVN6DI"
+DISTRO="${CLOUDFRONT_DISTRIBUTION_ID:?set CLOUDFRONT_DISTRIBUTION_ID}"
 
 aws s3 sync . "s3://${BUCKET}/${PREFIX}/" --profile "$PROFILE" --region "$REGION" \
 	--cache-control "public, max-age=86400" --exclude "*.html"

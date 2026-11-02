@@ -10,7 +10,7 @@ BUCKET="bryanchasko.com"
 PREFIX="cloudcroft-disc-golf/app"
 PROFILE="${AWS_PROFILE:-aerospaceug-admin}"
 REGION="us-west-2"
-DISTRO="E2E9BSL5RVN6DI"
+DISTRO="${CLOUDFRONT_DISTRIBUTION_ID:?set CLOUDFRONT_DISTRIBUTION_ID}"
 
 # Assets, long cache (no --delete: siblings share nothing here, but stay safe
 # and let stale files be overwritten; removals are handled by explicit rm).

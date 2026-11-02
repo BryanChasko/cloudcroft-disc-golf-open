@@ -8,7 +8,7 @@ cd "$(dirname "$0")/.."
 BUCKET="bryanchasko.com"
 PROFILE="${AWS_PROFILE:-aerospaceug-admin}"
 REGION="us-west-2"
-DISTRO="E2E9BSL5RVN6DI"
+DISTRO="${CLOUDFRONT_DISTRIBUTION_ID:?set CLOUDFRONT_DISTRIBUTION_ID}"
 
 aws s3 sync redirects/disc-golf/ "s3://${BUCKET}/disc-golf/" \
 	--profile "$PROFILE" --region "$REGION" \

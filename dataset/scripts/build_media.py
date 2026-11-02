@@ -32,6 +32,7 @@ Usage: python build_media.py [--dry-run] [--publish]
 
 import hashlib
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -62,7 +63,7 @@ JPG_QUALITY = 82
 S3_BUCKET = "s3://bryanchasko.com/cloudcroft-disc-golf/media/"
 S3_REGION = "us-west-2"
 S3_PROFILE = "aerospaceug-admin"
-CF_DIST = "E2E9BSL5RVN6DI"
+CF_DIST = os.environ["CLOUDFRONT_DISTRIBUTION_ID"]
 
 
 def sha256_of(path: Path) -> str:
