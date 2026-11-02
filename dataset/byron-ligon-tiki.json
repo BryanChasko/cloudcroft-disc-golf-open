@@ -1,0 +1,376 @@
+{
+  "type": "FeatureCollection",
+  "name": "byron-ligon-memorial-tiki-dgc",
+  "course": {
+    "name": "Byron Ligon Memorial Tiki DGC",
+    "location": "Zenith Park (west end), Cloudcroft, NM 88317",
+    "holes": 9,
+    "par": 27,
+    "length_ft": 901,
+    "style": "putting course, all putters, redesigned May 2025",
+    "terrain": "aspen and doug fir, mostly flat, hike/bike trail crossings",
+    "distances_source": "Radius Disc Golf course page",
+    "coordinates_status": "ground GPS 2026-11-01: 6 points located, 0 named to holes, rest awaiting labels",
+    "anchor_lon": -105.73887,
+    "anchor_lat": 32.95787,
+    "anchor_ele_ft": 8664.5,
+    "anchor_source": "Amazon Location Service geocode (Zenith Park) + USGS EPQS 1m 3DEP"
+  },
+  "holes": [
+    {
+      "hole": 1,
+      "par": 3,
+      "distance_ft": 39,
+      "note": "shortest",
+      "status": "remote",
+      "par_source": "remote listing"
+    },
+    {
+      "hole": 2,
+      "par": 3,
+      "distance_ft": 118,
+      "status": "remote",
+      "par_source": "remote listing"
+    },
+    {
+      "hole": 3,
+      "par": 3,
+      "distance_ft": 133,
+      "status": "remote",
+      "par_source": "remote listing"
+    },
+    {
+      "hole": 4,
+      "par": 3,
+      "distance_ft": 134,
+      "note": "longest",
+      "status": "remote",
+      "par_source": "remote listing"
+    },
+    {
+      "hole": 5,
+      "par": 3,
+      "distance_ft": 66,
+      "status": "remote",
+      "par_source": "remote listing"
+    },
+    {
+      "hole": 6,
+      "par": 3,
+      "distance_ft": 67,
+      "status": "remote",
+      "par_source": "remote listing"
+    },
+    {
+      "hole": 7,
+      "par": 3,
+      "distance_ft": 89,
+      "status": "remote",
+      "par_source": "remote listing"
+    },
+    {
+      "hole": 8,
+      "par": 3,
+      "distance_ft": 128,
+      "status": "remote",
+      "par_source": "remote listing"
+    },
+    {
+      "hole": 9,
+      "par": 3,
+      "distance_ft": 127,
+      "status": "remote",
+      "par_source": "remote listing"
+    }
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-105.738308333, 32.956923333]
+      },
+      "properties": {
+        "kind": "unidentified",
+        "layer": "",
+        "feature": "",
+        "remark": "",
+        "seq": 0,
+        "elevation_m": 2628.5,
+        "compass_brg": 262.023,
+        "accuracy_h_m": 7.143,
+        "accuracy_v_m": 2,
+        "averaging": 1,
+        "sats_in_use": 16,
+        "photos": ["cloudcroft-village-course_20261101_105648849.jpg"],
+        "photo_remarks": [""],
+        "survey_id": "tiki-01",
+        "name": "tiki-survey-01",
+        "note": "",
+        "lat": 32.956923333,
+        "lon": -105.738308333,
+        "course": "tiki",
+        "photo": "data/photos/cloudcroft-village-course_20261101_105648849.webp",
+        "photos_web": [
+          "data/photos/cloudcroft-village-course_20261101_105648849.webp"
+        ],
+        "field_photos": [
+          {
+            "web_url": "data/photos/PXL_20261101_175522409.webp",
+            "label": "Byron Ligon teebox 3 rubber pad in woods",
+            "dist_m": 5.5
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_180320124.webp",
+            "label": "Byron Ligon fairway 3, aspen grove view",
+            "dist_m": 20.8
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_180555239.webp",
+            "label": "basket in trees, fairway behind",
+            "dist_m": 29.4
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-105.73836, 32.956978333]
+      },
+      "properties": {
+        "kind": "unidentified",
+        "layer": "unknown-teebox",
+        "feature": "",
+        "remark": "unknown-teebox",
+        "seq": 0,
+        "elevation_m": 2619.7,
+        "compass_brg": 267.85,
+        "accuracy_h_m": 9.694,
+        "accuracy_v_m": 1,
+        "averaging": 1,
+        "sats_in_use": 19,
+        "photos": [],
+        "photo_remarks": [],
+        "survey_id": "tiki-02",
+        "name": "unknown-teebox",
+        "note": "",
+        "lat": 32.956978333,
+        "lon": -105.73836,
+        "course": "tiki",
+        "photo": null,
+        "photos_web": [],
+        "field_photos": [
+          {
+            "web_url": "data/photos/PXL_20261101_175522409.webp",
+            "label": "Byron Ligon teebox 3 rubber pad in woods",
+            "dist_m": 2.3
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_180320124.webp",
+            "label": "Byron Ligon fairway 3, aspen grove view",
+            "dist_m": 17.1
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_180555239.webp",
+            "label": "basket in trees, fairway behind",
+            "dist_m": 24.0
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-105.738358788, 32.95691003]
+      },
+      "properties": {
+        "kind": "unidentified",
+        "layer": "unknown-teebox",
+        "feature": "",
+        "remark": "unknown-teebox-front",
+        "seq": 0,
+        "elevation_m": 2619.498,
+        "compass_brg": 256.786,
+        "accuracy_h_m": 12.755,
+        "accuracy_v_m": 3,
+        "averaging": 55,
+        "sats_in_use": 22,
+        "photos": [],
+        "photo_remarks": [],
+        "survey_id": "tiki-03",
+        "name": "unknown-teebox-front",
+        "note": "",
+        "lat": 32.95691003,
+        "lon": -105.738358788,
+        "course": "tiki",
+        "photo": null,
+        "photos_web": [],
+        "field_photos": [
+          {
+            "web_url": "data/photos/PXL_20261101_175522409.webp",
+            "label": "Byron Ligon teebox 3 rubber pad in woods",
+            "dist_m": 6.2
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_180320124.webp",
+            "label": "Byron Ligon fairway 3, aspen grove view",
+            "dist_m": 16.1
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_180555239.webp",
+            "label": "basket in trees, fairway behind",
+            "dist_m": 25.2
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-105.738543333, 32.956883333]
+      },
+      "properties": {
+        "kind": "unidentified",
+        "layer": "",
+        "feature": "",
+        "remark": "",
+        "seq": 0,
+        "elevation_m": 2618.5,
+        "compass_brg": 135.813,
+        "accuracy_h_m": 9.694,
+        "accuracy_v_m": 15,
+        "averaging": 1,
+        "sats_in_use": 17,
+        "photos": ["cloudcroft-village-course_20261101_110332646.jpg"],
+        "photo_remarks": [""],
+        "survey_id": "tiki-04",
+        "name": "tiki-survey-04",
+        "note": "",
+        "lat": 32.956883333,
+        "lon": -105.738543333,
+        "course": "tiki",
+        "photo": "data/photos/cloudcroft-village-course_20261101_110332646.webp",
+        "photos_web": [
+          "data/photos/cloudcroft-village-course_20261101_110332646.webp"
+        ],
+        "field_photos": [
+          {
+            "web_url": "data/photos/PXL_20261101_180320124.webp",
+            "label": "Byron Ligon fairway 3, aspen grove view",
+            "dist_m": 4.5
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_180555239.webp",
+            "label": "basket in trees, fairway behind",
+            "dist_m": 12.3
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_175522409.webp",
+            "label": "Byron Ligon teebox 3 rubber pad in woods",
+            "dist_m": 20.8
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-105.738553333, 32.956918333]
+      },
+      "properties": {
+        "kind": "unidentified",
+        "layer": "",
+        "feature": "",
+        "remark": "",
+        "seq": 0,
+        "elevation_m": 2625.2,
+        "compass_brg": 252.936,
+        "accuracy_h_m": 6.122,
+        "accuracy_v_m": 4,
+        "averaging": 1,
+        "sats_in_use": 22,
+        "photos": ["cloudcroft-village-course_20261101_110347381.jpg"],
+        "photo_remarks": [""],
+        "survey_id": "tiki-05",
+        "name": "tiki-survey-05",
+        "note": "",
+        "lat": 32.956918333,
+        "lon": -105.738553333,
+        "course": "tiki",
+        "photo": "data/photos/cloudcroft-village-course_20261101_110347381.webp",
+        "photos_web": [
+          "data/photos/cloudcroft-village-course_20261101_110347381.webp"
+        ],
+        "field_photos": [
+          {
+            "web_url": "data/photos/PXL_20261101_180320124.webp",
+            "label": "Byron Ligon fairway 3, aspen grove view",
+            "dist_m": 2.1
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_180555239.webp",
+            "label": "basket in trees, fairway behind",
+            "dist_m": 8.7
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_175522409.webp",
+            "label": "Byron Ligon teebox 3 rubber pad in woods",
+            "dist_m": 20.4
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-105.738549722, 32.956943111]
+      },
+      "properties": {
+        "kind": "unidentified",
+        "layer": "unknown-teebox",
+        "feature": "",
+        "remark": "pano-unknown-fairway",
+        "seq": 0,
+        "elevation_m": 2632.33,
+        "compass_brg": 260.094,
+        "accuracy_h_m": 12.245,
+        "accuracy_v_m": 1,
+        "averaging": 30,
+        "sats_in_use": 21,
+        "photos": [],
+        "photo_remarks": [],
+        "survey_id": "tiki-06",
+        "name": "pano-unknown-fairway",
+        "note": "",
+        "lat": 32.956943111,
+        "lon": -105.738549722,
+        "course": "tiki",
+        "photo": null,
+        "photos_web": [],
+        "field_photos": [
+          {
+            "web_url": "data/photos/PXL_20261101_180320124.webp",
+            "label": "Byron Ligon fairway 3, aspen grove view",
+            "dist_m": 2.9
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_180555239.webp",
+            "label": "basket in trees, fairway behind",
+            "dist_m": 7.2
+          },
+          {
+            "web_url": "data/photos/PXL_20261101_175522409.webp",
+            "label": "Byron Ligon teebox 3 rubber pad in woods",
+            "dist_m": 19.5
+          }
+        ]
+      }
+    }
+  ]
+}

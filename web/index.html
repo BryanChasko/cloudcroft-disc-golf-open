@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cloudcroft Disc Golf — watch an AR scorecard get built</title>
+    <meta
+      name="description"
+      content="A live demo of building an AR disc golf scorecard: ground GPS survey to playable card, hole by hole. Cloudcroft NM: Byron Ligon Tiki + Community courses."
+    />
+    <link
+      rel="canonical"
+      href="https://bryanchasko.com/cloudcroft-disc-golf/app/"
+    />
+    <meta name="theme-color" content="#143d2a" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cloudcroft Disc Golf" />
+    <meta
+      property="og:title"
+      content="Cloudcroft Disc Golf — watch an AR scorecard get built"
+    />
+    <meta
+      property="og:description"
+      content="Ground GPS survey to playable scorecard, hole by hole: Byron Ligon Tiki (9) + Cloudcroft Community (18). Live map, walkthrough, open survey data."
+    />
+    <meta
+      property="og:url"
+      content="https://bryanchasko.com/cloudcroft-disc-golf/app/"
+    />
+    <meta
+      property="og:image"
+      content="https://bryanchasko.com/cloudcroft-disc-golf/app/evidence/hole2-tee-sign.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Hole 2 tee sign: 245 feet, par 3, mando and fence-line out of bounds"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Cloudcroft Disc Golf — watch an AR scorecard get built"
+    />
+    <meta
+      name="twitter:description"
+      content="Ground GPS survey to playable scorecard, hole by hole. Live map, walkthrough, open survey data."
+    />
+    <meta
+      name="twitter:image"
+      content="https://bryanchasko.com/cloudcroft-disc-golf/app/evidence/hole2-tee-sign.jpg"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SportsActivityLocation",
+            "name": "Byron Ligon Memorial Tiki Disc Golf Course",
+            "sport": "Disc Golf",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Cloudcroft",
+              "addressRegion": "NM",
+              "postalCode": "88317"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 32.95787,
+              "longitude": -105.73887,
+              "elevation": 8664.5
+            }
+          },
+          {
+            "@type": "SportsActivityLocation",
+            "name": "Cloudcroft Community Disc Golf Course",
+            "sport": "Disc Golf",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "230 Mescalero Ave",
+              "addressLocality": "Cloudcroft",
+              "addressRegion": "NM"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 32.9632,
+              "longitude": -105.73996,
+              "elevation": 8781.4
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#holes">Skip to scorecard</a>
+    <header id="topbar">
+      <h1>Cloudcroft disc golf</h1>
+      <p id="survey-status" class="note">survey in progress</p>
+      <nav id="course-tabs" aria-label="courses">
+        <button
+          type="button"
+          data-course="tiki"
+          class="active"
+          aria-pressed="true"
+        >
+          Byron Ligon Tiki · 9
+        </button>
+        <button type="button" data-course="community" aria-pressed="false">
+          Community · 18
+        </button>
+        <a id="walk-link" href="./walk.html">Walkthrough →</a>
+      </nav>
+      <nav data-site-nav></nav>
+    </header>
+    <main>
+      <div id="map" role="application" aria-label="course map"></div>
+      <aside id="panel">
+        <section id="layer-toggles">
+          <h2>Layers</h2>
+          <label
+            ><input type="radio" name="basemap" value="topo" checked />
+            Topo</label
+          >
+          <label
+            ><input type="radio" name="basemap" value="imagery" />
+            Satellite</label
+          >
+          <label
+            ><input type="checkbox" id="toggle-trails" checked /> Trails</label
+          >
+          <label
+            ><input type="checkbox" id="toggle-naip" /> NAIP 2022 overlay</label
+          >
+          <label
+            ><input type="checkbox" id="toggle-shots" checked /> Field photos +
+            panos</label
+          >
+          <p class="note">
+            Open data on this map: USGS NAIP 2022 (60&nbsp;cm) imagery overlay
+            and an OpenStreetMap trail extract. Hole elevation math uses the
+            USGS 3DEP 1&nbsp;m DEM; it is not drawn as a layer on this 2D map.
+          </p>
+        </section>
+        <section id="place-nav" aria-labelledby="place-nav-h">
+          <h2 id="place-nav-h">Map points</h2>
+          <label for="place-select"
+            >Go to a surveyed point, photo, or panorama</label
+          >
+          <select id="place-select">
+            <option value="">Loading mapped points…</option>
+          </select>
+          <p class="note" id="demo-route">
+            Demo route: start at the Mountaintop, then tap any dot — dark
+            blue/gold are surveyed tees/baskets, orange are Pixel photos, teal
+            are panoramas you can stand in.
+          </p>
+          <button type="button" id="mountaintop-go">
+            Start at the Mountaintop — Community tee 2
+          </button>
+          <div id="place-detail" aria-live="polite">
+            <p class="note">
+              Every geolocated survey point, Pixel photo, and panorama from the
+              field day, by its recorded coordinates.
+            </p>
+          </div>
+        </section>
+        <section id="hole-list">
+          <h2>Holes</h2>
+          <table id="holes" aria-describedby="survey-status">
+            <caption class="note">
+              Per-hole rows: surveyed where ground GPS landed, scaffold where
+              the survey has not reached yet.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Hole</th>
+                <th scope="col">Par</th>
+                <th scope="col">Dist</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+        <section id="scorecard">
+          <h2>Scorecard</h2>
+          <div id="round-controls">
+            <button id="new-round">Start round</button>
+            <span id="round-id"></span>
+          </div>
+          <div id="hole-score" hidden>
+            <label
+              >Hole
+              <input id="score-hole" type="number" min="1" max="18" value="1"
+            /></label>
+            <label
+              >Strokes
+              <input
+                id="score-strokes"
+                type="number"
+                min="1"
+                max="12"
+                value="3"
+            /></label>
+            <button id="save-score">Save</button>
+            <span id="save-status" role="status" aria-live="polite"></span>
+          </div>
+          <ul id="scores"></ul>
+        </section>
+        <section id="radio">
+          <h2>Mountain radio</h2>
+          <div data-radio-tuner></div>
+          <p class="note">
+            Same tuner as
+            <a href="/cloudcroft-disc-golf/#h-radio">the story page</a>
+            and the walkthrough — your station follows you.
+          </p>
+        </section>
+      </aside>
+    </main>
+    <section id="how-built">
+      <details>
+        <summary><h2>How this scorecard gets built</h2></summary>
+        <ol>
+          <li>
+            <strong>Walk the course.</strong> At each tee an averaged GPS point
+            joins a photo of the tee sign and a note — par, distance, mando,
+            out-of-bounds. This one is real: community tee 2, par 3, 245 ft,
+            mando right, fence-line out of bounds right.
+            <figure>
+              <img
+                src="figures/fig-swmaps-community-tee2.webp"
+                alt="SW Maps recording community tee 2 with par, distance, and mando note"
+                loading="lazy"
+              />
+              <figcaption>
+                Field capture: averaged fix plus the remark that becomes this
+                hole's row.
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <strong>Hand off the raw day.</strong> The survey app's project
+            backup carries every point, note, and attached photo in one file. A
+            small extractor turns it into open GeoJSON — no app lock-in.
+          </li>
+          <li>
+            <strong>Validate.</strong> Points must land inside the course
+            boundary; named tees and baskets must parse. Gaps are reported,
+            never silently invented — unsurveyed holes stay visibly blank, like
+            the scaffolds in the table above.
+          </li>
+          <li>
+            <strong>Build the holes.</strong> Tee-to-basket lines, elevation,
+            and a plays-like distance come from the 1&nbsp;m terrain model,
+            cross-checked against the tee signs.
+          </li>
+          <li>
+            <strong>Publish.</strong> The map, walkthrough, and this card read
+            the same data files, so the next field day lights up new holes with
+            no code change.
+          </li>
+        </ol>
+        <div id="field-gallery" aria-live="polite">
+          <h3>Every photo from the November 1 field day</h3>
+          <p class="note">loading the field gallery…</p>
+        </div>
+        <h3>Field evidence</h3>
+        <div id="evidence">
+          <figure>
+            <img
+              src="evidence/kiosk.jpg"
+              alt="Course kiosk with posted layout"
+              loading="lazy"
+            />
+            <figcaption>Course kiosk.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="evidence/hole1-basket.jpg"
+              alt="Basket 1 at Cloudcroft Community"
+              loading="lazy"
+            />
+            <figcaption>Community basket 1.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="evidence/hole2-tee-sign.jpg"
+              alt="Hole 2 tee sign: 245 feet, par 3, mando and fence-line out of bounds"
+              loading="lazy"
+            />
+            <figcaption>Hole 2 tee sign — the par source.</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="evidence/hole2-basket.jpg"
+              alt="Basket 2 with fairway behind"
+              loading="lazy"
+            />
+            <figcaption>Community basket 2.</figcaption>
+          </figure>
+        </div>
+      </details>
+    </section>
+    <footer>
+      <span id="status" role="status" aria-live="polite">loading map…</span>
+      <span id="coord-readout" aria-label="cursor coordinates"></span>
+      <button id="locate">Find me</button>
+      <span id="app-version" title="build version">v0.007</span>
+    </footer>
+    <script src="shared/radio-tuner.js" defer></script>
+    <script src="shared/site-nav.js" defer></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
